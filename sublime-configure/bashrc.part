@@ -1,0 +1,5 @@
+
+###SUBLIME TEXT CONFIGURATION###################
+
+export EDITOR='subl -w'
+export PATH="~/bin:${PATH}"

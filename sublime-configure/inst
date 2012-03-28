@@ -1,0 +1,18 @@
+#!/bin/bash
+if [ -f "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ]; then
+echo "Configuring Sublime Text ";
+
+	BASEDIR=$(dirname $0)
+	DESTDIR="/Users/jfox/Library/Application Support/Sublime Text 2/Packages/User"
+	if [ ! -f $BASEDIR/../bashrc.build ]; then
+		touch $BASEDIR/../bashrc.build
+	fi
+
+	cp -rf "${BASEDIR}/lib/Default (OSX).sublime-keymap" "${DESTDIR}/Default (OSX).sublime-keymap"
+	cp -rf "${BASEDIR}/lib/Preferences.sublime-settings" "${DESTDIR}/Preferences.sublime-settings"
+
+	mkdir ~/bin
+	ln -s "/Applications/Sublime Text 2.app/Contents/SharedSupport/bin/subl" ~/bin/subl
+
+	cat $BASEDIR/bashrc.part >> $BASEDIR/../bashrc.build
+fi

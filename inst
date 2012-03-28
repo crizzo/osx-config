@@ -5,6 +5,7 @@ fi
 echo "#!/bin/bash" > bashrc.build
 
 #copy the parts to the bash build file
+./sublime-configure/inst
 ./default-configure/inst
 ./git-configure/inst
 
