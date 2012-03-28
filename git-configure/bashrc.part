@@ -1,0 +1,14 @@
+
+
+###CUSTOM GIT CONFIGURATION###################
+
+GREEN="\[\033[0;32m\]"
+PURPLE="\[\033[0;35m\]"
+BLUE="\[\033[36m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+source ~/osx-config/git/git-completion
+source ~/osx-config/git/git-bash-completion
+GIT_PS1_SHOWDIRTYSTATE=true
+PS1="$LIGHT_GRAY\u@\h \$(date +%H:%M) $BLUE\w$PURPLE\$(__git_ps1)$GREEN: "
+alias gg="git status -s"
+alias gc="git commit -am"

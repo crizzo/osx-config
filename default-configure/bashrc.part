@@ -1,0 +1,7 @@
+
+
+###DEFAULT BASHRC CONFIGURATION###################
+
+alias ll='ls -lah'
+alias c="clear"
+alias svn_find="find . -path '*/.svn' -prune -o -type f -print0 | xargs -0 grep -I -n -e "

@@ -1,0 +1,10 @@
+#!/bin/bash
+BASEDIR=$(dirname $0)
+if [ ! -f $BASEDIR/../bashrc.build ]; then
+	touch $BASEDIR/../bashrc.build
+fi
+
+cat $BASEDIR/bashrc.part >> $BASEDIR/../bashrc.build
+if [ -f $BASEDIR/bashrc.part.local ]; then
+	cat $BASEDIR/bashrc.part.local >> $BASEDIR/../bashrc.build
+fi

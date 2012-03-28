@@ -1,0 +1,16 @@
+#!/bin/bash
+BASEDIR=$(dirname $0)
+mkdir -pv ~/osx-config/git/
+cp -rf $BASEDIR/lib/git-completion ~/osx-config/git/
+cp -rf $BASEDIR/lib/git-bash-completion ~/osx-config/git/
+git config --global user.name "Jason Fox"
+git config --global user.email jasonrobertfox@gmail.com
+git config --global color.branch auto
+git config --global color.diff auto
+git config --global color.status auto
+
+if [ ! -f $BASEDIR/../bashrc.build ]; then
+	$BASEDIR/../bashrc.build
+fi
+
+cat $BASEDIR/bashrc.part >> $BASEDIR/../bashrc.build

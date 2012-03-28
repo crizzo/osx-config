@@ -1,0 +1,17 @@
+#!/bin/bash
+if [ -f bashrc.build ]; then
+	rm bashrc.build
+fi
+echo "#!/bin/bash" > bashrc.build
+
+#copy the parts to the bash build file
+./default-configure/inst
+./git-configure/inst
+
+#install the new files
+mv -f ~/.bash_profile ~/.bash_profile.backup
+mv -f ~/.bashrc ~/.bashrc.backup
+cp -f bashrc.build ~/.bashrc
+cp -f .bash_profile ~/.bash_profile
+
+
